@@ -1,13 +1,39 @@
 <script>
- export let readonlyvar = 'This is readonly';
+ // export let data;
 
- console.log({readonlyvar});
- $: {
-  console.log({readonlyvar})
- }
+ let username = '';
+ let password = '';
+
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<button on:click={() => readonlyvar = 'not so read only now'}>Update the readonlyvar</button>
-<p>{readonlyvar}</p>
+<div class="login-wrapper">
+  <h2>Login</h2>
+  
+  <p>Username</p>
+  <input class="username-input" bind:value={username} placeholder="Username" />
+
+  <p>Password</p>
+  <input bind:value={password} placeholder="Password" type="password" />
+
+  <button class="login-button" on:click={() => console.log('logging in')}>Login</button>
+</div>
+
+
+<style>
+  .login-wrapper {
+    box-shadow: 0px 0px 5px 6px #DADADA;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 25vw;
+    background-color: white;
+  }
+  .login-button {
+    margin-top: 20px;
+  }
+  .username-input {
+    margin-bottom: 10px;
+  }
+</style>
