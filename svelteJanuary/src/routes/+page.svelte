@@ -7,7 +7,7 @@
 </script>
 
 <div class="login-wrapper">
-  <h2>Login</h2>
+  <h2>Login test</h2>
   
   <p>Username</p>
   <input class="username-input" bind:value={username} placeholder="Username" />
