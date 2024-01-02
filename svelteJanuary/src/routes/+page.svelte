@@ -15,7 +15,7 @@
   <p>Password</p>
   <input bind:value={password} placeholder="Password" type="password" />
 
-  <button class="login-button" on:click={() => console.log('logging in')}>Login</button>
+  <button class="login-button" on:click={() => window.location.href = '/home'}>Login</button>
 </div>
 
 
