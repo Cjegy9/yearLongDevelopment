@@ -1,8 +1,23 @@
 <script>
+  import { onMount } from "svelte";
  // export let data;
 
  let username = '';
  let password = '';
+
+ onMount(async () => {
+  fetch("http://localhost:3000/", {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'same-origin'
+  })
+  .then(response => response.text())
+  .then(data => {
+		console.log({data});
+  }).catch(error => {
+    console.log(error);
+  });
+});
 
 </script>
 
