@@ -1,5 +1,5 @@
 <script>
-
+  let condition = false;
  
 </script>
 
@@ -23,9 +23,17 @@
   </ul>
 </div>
 
-<div class="layout-wrapper">
-  <slot></slot>
-</div>
+
+{#if condition}
+  <div class="layout-wrapper">
+    <slot></slot>
+  </div>
+{:else}
+  <div class="layout-wrapper2">
+    <slot></slot>
+  </div>
+{/if}
+
 
 <style>
   .layout {
@@ -64,5 +72,8 @@
   }
   .layout-wrapper {
     margin: 40px;
+  }
+  .layout-wrapper2 {
+    margin: 100px;
   }
 </style>
